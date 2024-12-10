@@ -43,7 +43,7 @@
 - **2024.12.10**: This repo is created.
 
 ## 📸 Pipeline
-[<img src="assets/overview.png" height="400px"/>]
+<img src="assets/overview.png" height="400px"/>
 
 
 ## 🔧 Dependencies and Installation
