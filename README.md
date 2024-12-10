@@ -10,8 +10,8 @@
           <a href='https://scholar.google.com/citations?user=VZVTOOIAAAAJ' target='_blank'>Xinbo Gao</a><sup>2</sup>
 </div>
 <div>
-    <sup>1</sup>State Key Laboratory of Integrated Services Networks, Xidian University, Xi'an, China&emsp;<br>
-    <sup>2</sup>Chongqing Key Laboratory of Image Cognition, Chongqing University of Posts and Telecommunications, Chongqing, China;<br>
+    <sup>1</sup>State Key Laboratory of Integrated Services Networks, Xidian University, China&emsp;<br>
+    <sup>2</sup>Chongqing Key Laboratory of Image Cognition, Chongqing University of Posts and Telecommunications, China;<br>
 </div>
 <div>
 </div>
