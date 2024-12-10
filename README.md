@@ -42,6 +42,7 @@
 
 ## 📸 Pipeline
 <img src="assets/overview.png" height="400px"/>
+This paper uncovers a surprising increasing trend in the gap of features between natural and adversarial samples in AFT methods, and further investigates it from the perspective of features. We model features as the intrinsic features and confused features, in which the latter is defined as the specific latent features leading to the feature gap. Then we propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the feature gap to enhance robustness. We design the feature disentangler to explicitly separate out the confused features from features of adversarial samples. Besides, the disentangled features are aligned with the natural features in the pre-trained model. Experiments demonstrate that AFD effectively mitigates the feature gap and achieves a good trade-off between generalization and robustness.
 
 
 ## 🔧 Dependencies and Installation
