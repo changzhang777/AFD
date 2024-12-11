@@ -42,7 +42,7 @@
 
 ## 🔥 News
 - **2024.12.10**: This repo is created.
-- **2024.12.11**: Pretrained and finetuned models are released.
+- **2024.12.11**: Pretrained and finetuned models are released. Add instructions to train and test.
 
 ## :bulb: Motivation
 **This paper uncovers a surprising increasing trend in the gap of features between natural and adversarial samples in AFT methods**, **and further investigates it from the perspective of features**. We suppose some specific latent features (confused features) leads to the feature gap. 
@@ -55,13 +55,6 @@
 We propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the feature gap to enhance robustness, with the disentanglement and alignment to eliminate the confused features. 
 <div align=center>
 <img src="assets/overview.png" height="300px"/>
-</div>
-
-
-## :trophy: Results
-**Bold** and <u>Underline</u> mean the first and second best result.
-<div align=center>
-<img src="assets/results.png" height="500px"/>
 </div>
 
 
@@ -129,11 +122,19 @@ python3 tl+sl.py \
 Please modify the path of training datasets in `ADF/tl+sl.py`. You can also modify the training hyper-parameters (e.g., `lr`, `batch_size`, `weight_decay`) in this file, according to your own GPU machines.
 
 ## ⚡ Inference
-Run the following command to evaluate the models on [AutoAttack](https://github.com/fra31/auto-attack) or [Adaptive AutoAttack](https://github.com/liuye6666/adaptive_auto_attack). Our finetuned models have been released in [Huggingface](https://huggingface.co/nuoyanzhou/AFD/tree/main/ours). We suggest that the user begins from the latter since the latter is faster than the former by several times with a similar robust accuracy.
+Our finetuned models have been released in [Huggingface](https://huggingface.co/nuoyanzhou/AFD/tree/main/ours). Run the following command to evaluate the models on [AutoAttack](https://github.com/fra31/auto-attack) or [Adaptive AutoAttack](https://github.com/liuye6666/adaptive_auto_attack). We suggest that the user begins from the latter since the latter is faster than the former by several times with a similar robust accuracy.
 ```shell
 python3 test_AA.py # AutoAttack
 python3 Adaptive_Auto_Attack_main.py # Adaptive AutoAttack
 ```
+
+## :trophy: Results
+**Bold** and <u>Underline</u> mean the first and second best result.
+<div align=center>
+<img src="assets/results.png" height="500px"/>
+</div>
+
+
 
 ## 🪪 License
 
