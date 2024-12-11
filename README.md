@@ -133,7 +133,7 @@ python3 Adaptive_Auto_Attack_main.py # Adaptive AutoAttack
 ```
 
 ## :trophy: Results
-**Bold** and <u>Underline</u> mean the first and second best result.
+**Bold** and <ins>Underline</ins> mean the first and second best result.
 <div align=center>
 <img src="assets/results.png" height="500px"/>
 </div>
