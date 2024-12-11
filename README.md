@@ -71,9 +71,9 @@ We propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the featu
 2. Create Conda Environment and Install Package
 
    ```bash
+   # We recommend using Pytorch of a version lower than 1.2.0
    conda create -n AFD python=3.9 -y
    conda activate AFD
-   pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
    pip install -r requirement.txt
    ```
 3. Download Pre-trained Models (All models can be downloaded at [Huggingface](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline) for convenience, their training and test log are also availiable.)
@@ -87,20 +87,24 @@ We propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the featu
       * `WideResNet34-10-CIFAR10`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-Standard-CIFAR10/model-100.pth)
       * `WideResNet34-10-CIFAR100`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-Standard-CIFAR100/model-100.pth)
       * `WideResNet34-10-Tiny-ImageNet`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-Standard-Tiny-ImageNet/model-100.pth)
-      #### Other provided Model:
-      * `PGD-AT Trained`
-      * `TRADES Trained`
-      * `MART Trained`
-   
-    |    |  PGD-AT Trained   | TRADES Trained | MART Trained |
-    | ----  | ----  | ----  | ----  |
-    | ResNet18-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-TRADES-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-MART-CIFAR10-seed-0/model-120.pth) |
-    | ResNet18-CIFAR100  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-CIFAR100-seed-0/model-120.pth) | \  |  \ |
-    | ResNet18-Tiny-ImageNet  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-Tiny-ImageNet-seed-0/model-120.pth) | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-TRADES-Tiny-ImageNet-seed-0/model-120.pth)  | \  |
-    | WideResNet28-10-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-TRADES-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-MART-CIFAR10-seed-0/model-120.pth)   |
-    | WideResNet34-10-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-CIFAR10-seed-0/model-120.pth)  | \  |
-    | WideResNet34-10-CIFAR100  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-CIFAR100-seed-0/model-120.pth) | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-CIFAR100-seed-0/model-120.pth)  | \ |
-    | WideResNet34-10-Tiny-ImageNet  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-Tiny-ImageNet-seed-0/model-120.pth) |  [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-Tiny-ImageNet-seed-0/model-120.pth)  | \  |
+  
+   <!---
+       #### Other provided Model:
+          * `PGD-AT Trained`
+          * `TRADES Trained`
+          * `MART Trained`
+       
+        |    |  PGD-AT Trained   | TRADES Trained | MART Trained |
+        | ----  | ----  | ----  | ----  |
+        | ResNet18-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-TRADES-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-MART-CIFAR10-seed-0/model-120.pth) |
+        | ResNet18-CIFAR100  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-CIFAR100-seed-0/model-120.pth) | \  |  \ |
+        | ResNet18-Tiny-ImageNet  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-Tiny-ImageNet-seed-0/model-120.pth) | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-TRADES-Tiny-ImageNet-seed-0/model-120.pth)  | \  |
+        | WideResNet28-10-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-TRADES-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-MART-CIFAR10-seed-0/model-120.pth)   |
+        | WideResNet34-10-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-CIFAR10-seed-0/model-120.pth)  | \  |
+        | WideResNet34-10-CIFAR100  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-CIFAR100-seed-0/model-120.pth) | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-CIFAR100-seed-0/model-120.pth)  | \ |
+        | WideResNet34-10-Tiny-ImageNet  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-Tiny-ImageNet-seed-0/model-120.pth) |  [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-Tiny-ImageNet-seed-0/model-120.pth)  | \  |
+   -->
+
 
       
 ## 🎰 Train
