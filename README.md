@@ -60,7 +60,8 @@ This paper uncovers a surprising increasing trend in the gap of features between
    conda create -n AFD python=3.9 -y
    conda activate AFD
    pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
-   pip install 
+   pip install git+https://github.com/fra31/auto-attack
+   pip install torchvision pillow scipy pandas glob numpy
    ```
 3. Download Pre-trained Models (All models except for llava can be downloaded at [Huggingface](https://huggingface.co/shallowdream204/DreamClear/tree/main) for convenience.)
       #### Base Model:
