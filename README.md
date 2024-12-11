@@ -129,7 +129,7 @@ python3 tl+sl.py \
 Please modify the path of training datasets in `ADF/tl+sl.py`. You can also modify the training hyper-parameters (e.g., `lr`, `batch_size`, `weight_decay`) in this file, according to your own GPU machines.
 
 ## ⚡ Inference
-Run the following command to evaluate the models on [AutoAttack](https://github.com/fra31/auto-attack) or [Adaptive AutoAttack](https://github.com/liuye6666/adaptive_auto_attack). We suggest that the user begin from the latter since the latter is faster than the former by several times with a similar robust accuracy.
+Run the following command to evaluate the models on [AutoAttack](https://github.com/fra31/auto-attack) or [Adaptive AutoAttack](https://github.com/liuye6666/adaptive_auto_attack). Our finetuned models have been released in [Huggingface](https://huggingface.co/nuoyanzhou/AFD/tree/main/ours). We suggest that the user begins from the latter since the latter is faster than the former by several times with a similar robust accuracy.
 ```shell
 python3 test_AA.py # AutoAttack
 python3 Adaptive_Auto_Attack_main.py # Adaptive AutoAttack
