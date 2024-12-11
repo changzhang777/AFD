@@ -16,7 +16,7 @@ from models.resnet import *
 import logging
 import copy
 import math
-from loss import mmd_rbf
+
 
 os.environ["CUDA_VISIBLE_DEVICES"] = '1, 2'
 
