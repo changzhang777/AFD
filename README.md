@@ -24,6 +24,9 @@
         <a href="https://arxiv.org/abs/2401.14707" target='_blank'>
         <img src="https://img.shields.io/badge/arXiv%20paper-2410.18666-b31b1b.svg">
         </a>
+        <a href="https://huggingface.co/nuoyanzhou/AFD/tree/main" target='_blank'>
+        <img src="https://img.shields.io/badge/🤗%20Weights-AFD-yellow">
+        </a>
         <a target='_blank'>
         <img src="https://visitor-badge.laobi.icu/badge?page_id=changzhang777/AFD">
     </h4>
@@ -39,6 +42,7 @@
 
 ## 🔥 News
 - **2024.12.10**: This repo is created.
+- **2024.12.11**: Pretrained and finetuned models are released.
 
 ## 📸 Pipeline
 <img src="assets/overview.png" height="400px"/>
