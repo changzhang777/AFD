@@ -45,16 +45,24 @@
 - **2024.12.11**: Pretrained and finetuned models are released.
 
 ## :bulb: Motivation
-<img src="assets/motivate.png" height="400px"/>
-This paper uncovers a surprising increasing trend in the gap of features between natural and adversarial samples in AFT methods, and further investigates it from the perspective of features. We suppose that some specific latent features (confused features) leads to the feature gap. Then we propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the feature gap to enhance robustness, with the disentanglement and alignment to eliminate the confused features. 
+**This paper uncovers a surprising increasing trend in the gap of features between natural and adversarial samples in AFT methods**, **and further investigates it from the perspective of features**. We suppose some specific latent features (confused features) leads to the feature gap. 
+<div align=center>
+<img src="assets/motivate.png" height="300px"/>
+</div>
 
 
 ## 📸 Pipeline
-<img src="assets/overview.png" height="400px"/>
+We propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the feature gap to enhance robustness, with the disentanglement and alignment to eliminate the confused features. 
+<div align=center>
+<img src="assets/overview.png" height="300px"/>
+</div>
 
 
-## Results
-<img src="assets/results.png" height="400px"/>
+## :trophy: Results
+**Bold** and <u>Underline</u> mean the first and second best result.
+<div align=center>
+<img src="assets/results.png" height="500px"/>
+</div>
 
 
 
@@ -76,7 +84,7 @@ This paper uncovers a surprising increasing trend in the gap of features between
    pip install -r requirement.txt
    ```
 3. Download Pre-trained Models (All models can be downloaded at [Huggingface](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline) for convenience, their training and test log are also availiable.)
-      #### Base pretrained Model:
+      #### Naturally pretrained Model:
       * `ResNet18-CIFAR10`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-Standard-CIFAR10/model-100.pth)
       * `ResNet18-CIFAR100`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-Standard-CIFAR100/model-100.pth)
       * `ResNet18-Tiny-ImageNet`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-Standard-Tiny-ImageNet/model-100.pth)
