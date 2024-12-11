@@ -61,7 +61,7 @@ We propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the featu
 
 ## 🔧 Dependencies and Installation
 
-1. Clone this repo and navigate to DreamClear folder
+1. Clone this repo and navigate to AFD folder
 
    ```bash
    git clone https://github.com/changzhang777/AFD.git
