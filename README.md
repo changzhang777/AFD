@@ -44,9 +44,18 @@
 - **2024.12.10**: This repo is created.
 - **2024.12.11**: Pretrained and finetuned models are released.
 
+## :bulb: Motivation
+<img src="assets/motivate.png" height="400px"/>
+This paper uncovers a surprising increasing trend in the gap of features between natural and adversarial samples in AFT methods, and further investigates it from the perspective of features. We suppose that some specific latent features (confused features) leads to the feature gap. Then we propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the feature gap to enhance robustness, with the disentanglement and alignment to eliminate the confused features. 
+
+
 ## 📸 Pipeline
 <img src="assets/overview.png" height="400px"/>
-This paper uncovers a surprising increasing trend in the gap of features between natural and adversarial samples in AFT methods, and further investigates it from the perspective of features. We model features as the intrinsic features and confused features, in which the latter is defined as the specific latent features leading to the feature gap. Then we propose Adversarial Fine-tuning via Disentanglement (AFD) to bridge the feature gap to enhance robustness. We design the feature disentangler to explicitly separate out the confused features from features of adversarial samples. Besides, the disentangled features are aligned with the natural features in the pre-trained model. Experiments demonstrate that AFD effectively mitigates the feature gap and achieves a good trade-off between generalization and robustness.
+
+
+## Results
+<img src="assets/results.png" height="400px"/>
+
 
 
 ## 🔧 Dependencies and Installation
@@ -67,56 +76,57 @@ This paper uncovers a surprising increasing trend in the gap of features between
    pip install -r requirement.txt
    ```
 3. Download Pre-trained Models (All models can be downloaded at [Huggingface](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline) for convenience, their training and test log are also availiable.)
-      #### Base Model:
-      * `PixArt-α-1024`: [PixArt-XL-2-1024-MS.pth](https://huggingface.co/PixArt-alpha/PixArt-alpha/blob/main/PixArt-XL-2-1024-MS.pth)
-      * `VAE`: [sd-vae-ft-ema](https://huggingface.co/PixArt-alpha/PixArt-alpha/tree/main/sd-vae-ft-ema)
-      * `T5 Text Encoder`: [t5-v1_1-xxl](https://huggingface.co/PixArt-alpha/PixArt-alpha/tree/main/t5-v1_1-xxl)
-      * `LLaVA`: [llava-v1.6-vicuna-13b](https://huggingface.co/liuhaotian/llava-v1.6-vicuna-13b)
-      * `SwinIR`: [general_swinir_v1.ckpt](https://huggingface.co/lxq007/DiffBIR/blob/main/general_swinir_v1.ckpt)
-      #### Ours provided Model:
-      * `DreamClear`: [DreamClear-1024.pth](https://huggingface.co/shallowdream204/DreamClear/blob/main/DreamClear-1024.pth)
-      * `RMT for Segmentation`: [rmt_uper_s_2x.pth](https://huggingface.co/shallowdream204/DreamClear/blob/main/rmt_uper_s_2x.pth)
-      * `RMT for Detection`: [rmt_maskrcnn_s_1x.pth](https://huggingface.co/shallowdream204/DreamClear/blob/main/rmt_maskrcnn_s_1x.pth)
+      #### Base pretrained Model:
+      * `ResNet18-CIFAR10`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-Standard-CIFAR10/model-100.pth)
+      * `ResNet18-CIFAR100`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-Standard-CIFAR100/model-100.pth)
+      * `ResNet18-Tiny-ImageNet`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-Standard-Tiny-ImageNet/model-100.pth)
+      * `ResNet18-ImageNet`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-Standard-ImageNet/model-100.pth)
+      * `ResNet50-CIFAR10`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet50-Standard-CIFAR10/model-100.pth)
+      * `ResNet50-CIFAR100`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet50-Standard-CIFAR100/model-100.pth)
+      * `WideResNet34-10-CIFAR10`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-Standard-CIFAR10/model-100.pth)
+      * `WideResNet34-10-CIFAR100`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-Standard-CIFAR100/model-100.pth)
+      * `WideResNet34-10-Tiny-ImageNet`: [model-100.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-Standard-Tiny-ImageNet/model-100.pth)
+      #### Other provided Model:
+      * `PGD-AT Trained`
+      * `TRADES Trained`
+      * `MART Trained`
+   
+    |    |  PGD-AT Trained   | TRADES Trained | MART Trained |
+    | ----  | ----  | ----  | ----  |
+    | ResNet18-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-TRADES-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-MART-CIFAR10-seed-0/model-120.pth) |
+    | ResNet18-CIFAR100  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-CIFAR100-seed-0/model-120.pth) | \  |  \ |
+    | ResNet18-Tiny-ImageNet  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-PGD-AT-Tiny-ImageNet-seed-0/model-120.pth) | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/ResNet18-TRADES-Tiny-ImageNet-seed-0/model-120.pth)  | \  |
+    | WideResNet28-10-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-TRADES-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet28-MART-CIFAR10-seed-0/model-120.pth)   |
+    | WideResNet34-10-CIFAR10   | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-CIFAR10-seed-0/model-120.pth)  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-CIFAR10-seed-0/model-120.pth)  | \  |
+    | WideResNet34-10-CIFAR100  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-CIFAR100-seed-0/model-120.pth) | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-CIFAR100-seed-0/model-120.pth)  | \ |
+    | WideResNet34-10-Tiny-ImageNet  | [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-PGD-AT-Tiny-ImageNet-seed-0/model-120.pth) |  [model-120.pth](https://huggingface.co/nuoyanzhou/AFD/tree/main/baseline/WideResNet34-TRADES-Tiny-ImageNet-seed-0/model-120.pth)  | \  |
+
       
 ## 🎰 Train
 #### I - Prepare training data
+*  CIFAR10
+*  CIFAR100
+*  Tiny-ImageNet
 
-
-
-
-#### II - Training for DreamClear
+#### II - Training for AFD
 Run the following command to train ADF with default settings:
 ```shell
-python3 -m torch.distributed.launch --nproc_per_node=8 --nnodes=... --node_rank=... --master_addr=... --master_port=... \
-    train_dreamclear.py configs/DreamClear/DreamClear_Train.py \
-    --load_from /path/to/PixArt-XL-2-1024-MS.pth \
-    --vae_pretrained /path/to/sd-vae-ft-ema \
-    --swinir_pretrained /path/to/general_swinir_v1.ckpt \
-    --val_image /path/to/RealLQ250/lq/val_image.png \
-    --val_npz /path/to/RealLQ250/npz/val_image.npz \
-    --work_dir experiments/train_dreamclear
+python3 tl+sl.py \
+--alpha 0.05 # the weight to obtain confused features \
+--beta 0.25 # the weight to keep intrinsic features distinct from confused features \
+--gamma 25 # the weight to align with features of naturally pretrained models \
+--pretrained /path/to/pretrained_model \
+--model-dir /path/to/save_finetuned_model \
 ```
-Please modify the path of training datasets in `ADF/tl+sl.py`. You can also modify the training hyper-parameters (e.g., `lr`, `train_batch_size`, `gradient_accumulation_steps`) in this file, according to your own GPU machines.
+Please modify the path of training datasets in `ADF/tl+sl.py`. You can also modify the training hyper-parameters (e.g., `lr`, `batch_size`, `weight_decay`) in this file, according to your own GPU machines.
+
 ## ⚡ Inference
-We provide the AutoAttack
-#### Testing ADF for AutoAttack\PGD-20\CW
-
-
-Run the following command:
+Run the following command to evaluate the models on [AutoAttack](https://github.com/fra31/auto-attack) or [Adaptive AutoAttack](https://github.com/liuye6666/adaptive_auto_attack). We suggest that the user begin from the latter since the latter is faster than the former by several times with a similar robust accuracy.
 ```shell
-python3 -m torch.distributed.launch --nproc_per_node 1 --master_port 1234 \
-    test.py configs/DreamClear/DreamClear_Test.py \
-    --dreamclear_ckpt /path/to/DreamClear-1024.pth \
-    --swinir_ckpt /path/to/general_swinir_v1.ckpt \
-    --vae_ckpt /path/to/sd-vae-ft-ema \
-    --t5_ckpt /path/to/t5-v1_1-xxl \
-    --llava_ckpt /path/to/llava-v1.6-vicuna-13b \
-    --lre --cfg_scale 4.5 --color_align wavelet \
-    --image_path /path/to/input/images \
-    --save_dir validation \
-    --mixed_precision fp16 \
-    --upscale 4
+python3 test_AA.py # AutoAttack
+python3 Adaptive_Auto_Attack_main.py # Adaptive AutoAttack
 ```
+
 ## 🪪 License
 
 The provided code and pre-trained weights are licensed under the [Apache 2.0 license](LICENSE).
