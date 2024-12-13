@@ -4,7 +4,7 @@
 
 <div>
     <a href='https://scholar.google.com/citations?user=wxC_XDMAAAAJ' target='_blank'>Nuoyan Zhou</a><sup>1</sup>&emsp;
-    <a target='_blank'>Dawei Zhou</a><sup>1</sup>&emsp;
+    <a href='https://scholar.google.com.hk/citations?user=7H-LIigAAAAJ&hl=zh-CN&oi=sra' target='_blank'>Dawei Zhou</a><sup>1</sup>&emsp;
     <a href='https://scholar.google.com/citations?user=5fHHi24AAAAJ' target='_blank'>Decheng Liu</a><sup>1</sup>&emsp;
     <a href='https://scholar.google.com/citations?user=SRBn7oUAAAAJ' target='_blank'>Nannan Wang</a><sup>1</sup>&emsp;
           <a href='https://scholar.google.com/citations?user=VZVTOOIAAAAJ' target='_blank'>Xinbo Gao</a><sup>2</sup>
